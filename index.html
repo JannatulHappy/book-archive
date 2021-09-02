@@ -4,9 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/e84fde8317.js" crossorigin="anonymous"></script>
+    <!-- CSS file -->
+    <link rel="stylesheet" href="css/style.css">
     <title>Book Archive</title>
 </head>
 <body>
-    <h1>BOOK ARCHIVE</h1>
+    <header class="book-page-color">
+        <div class="d-flex justify-content-between">
+            <h5 class="text-white page-banner mt-2"><i class="fas fa-book-open me-2"></i>BOOK ARCHIVE</h5>
+            <button class="text-white  mb-1 btn btn-outline-secondary donate">Donate<i class="fas fa-heart ms-2 donate-icon"></i></button>
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            <h1 class="text-center fw-bold fs-2">Search Book!!</h1>
+            <div class="input-group flex-nowrap w-50 mx-auto mt-3  border rounded">
+                <span class="input-group-text" id="addon-wrapping"><i class="fas fa-caret-down"></i></span>
+                <!-- input field -->
+                <input id="search-field" type="text" class="form-control p-2 rounded" placeholder="Search the book you want" aria-label="Username" aria-describedby="addon-wrapping">
+                <button onclick="searchBook()" class="btn book-page-color text-white" type="button" id="button-search">Search</button>
+              </div>
+              <!-- Error and Spinner -->
+            <div>
+                <h1 id="error-message" class="bg-danger rounded text-center text-white mt-2 w-75 mx-auto py-1 "> Insert a valid name!!</h1>
+                
+                
+                <div id="spinner" class="spinner-grow" style="margin-left: 50%;" role="status">
+                    
+                </div>
+            </div>
+            <!-- showing total book numbers -->
+              <h1 id="book-numbers"class="bg-secondary rounded w-75 mx-auto text-white mt-2 text-center" >
+              </h1>
+              <!-- book search result -->
+              <div id="search-result" class=" row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mt-4">
+                
+              </div>
+        </section>
+    </main>
+    <script src="js/main.js"></script>
 </body>
 </html>
