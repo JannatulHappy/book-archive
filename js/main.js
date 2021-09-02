@@ -41,7 +41,7 @@ const displayError = () => {
 const displaySearchResult = data => {
     bookNumbers.textContent = '';
     searchResult.textContent = '';
-    const bookList = data.docs.slice(0, 30);
+    const bookList = data.docs;
     if (bookList === null) {
         displayError()
     }
@@ -53,12 +53,12 @@ const displaySearchResult = data => {
             bookNumbers.innerHTML = `<p> No result found</p>`
         }
         //showing each book in a card
-        bookList?.forEach(book => {
+        bookList.slice(0,30).forEach(book => {
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
             <div  class="card h-100 text-center">
-                <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg" class="w-75 h-50 rounded  p-2 mx-auto" alt="...">
+                <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="w-75 h-50 rounded  p-2 mx-auto" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center">${book.title}</h5>
                     <p class="card-text"><b>Author</b> :  ${book.author_name?book.author_name: 'Unknown author name'}</p>
