@@ -35,12 +35,13 @@ const displayError = () => {
     errorMsg.style.display = 'block';
     spinner.style.display = 'none';
     bookNumbers.textContent = '';
+    searchResult.textContent = ''
 }
 // Display Search Result
 const displaySearchResult = data => {
     bookNumbers.textContent = '';
     searchResult.textContent = '';
-    const bookList = data.docs;
+    const bookList = data.docs.slice(0, 30);
     if (bookList === null) {
         displayError()
     }
@@ -48,6 +49,9 @@ const displaySearchResult = data => {
         errorMsg.style.display = 'none';
         spinner.style.display = 'none';
         bookNumbers.innerText = `Books Found ${bookList.length}`;
+        if (bookList.length === 0) {
+            bookNumbers.innerHTML = `<p> No result found</p>`
+        }
         //showing each book in a card
         bookList?.forEach(book => {
             const div = document.createElement('div');
