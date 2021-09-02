@@ -53,7 +53,7 @@ const displaySearchResult = data => {
             bookNumbers.innerHTML = `<p> No result found</p>`
         }
         //showing each book in a card
-        bookList.slice(0,30).forEach(book => {
+        bookList.slice(0,28).forEach(book => {
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
