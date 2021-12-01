@@ -30,7 +30,7 @@ const searchBook = () => {
              .then(data => displaySearchResult(data));
     }
 }
-// showing error
+// showing error msg
 const displayError = () => {
     errorMsg.style.display = 'block';
     spinner.style.display = 'none';
